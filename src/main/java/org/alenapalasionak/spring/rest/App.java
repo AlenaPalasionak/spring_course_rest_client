@@ -30,7 +30,7 @@ public class App
         // Employee employee = new Employee("Svet", "Sokolov", "IT", 7200);
         //communication.saveEmployee(employee);
 
-        //апдет работника
+        //апдейт работника
 //        Employee employee = new Employee("Svet", "Sokolov", "IT", 900);
 //        employee.setId(20);
 //        communication.saveEmployee(employee);

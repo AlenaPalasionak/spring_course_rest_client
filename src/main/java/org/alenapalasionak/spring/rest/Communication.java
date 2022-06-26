@@ -12,7 +12,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Component
-public class Communication {//с его помощью будем общаться с rest сервисом: запросы - ответы
+public class Communication {//с его помощью будем общаться с rest сервисом: запросы - ответы.
+    // Инормация не будет выводиться в браузере, а эту информацию из тела responsа будет получать
+    //  метод клиента и можно с ней работать.
 
     @Autowired
     private RestTemplate restTemplate; // для HTTP запросов
@@ -20,8 +22,7 @@ public class Communication {//с его помощью будем общатьс
 
     public List<Employee> getAllEmployees(){
         ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<Employee>>() {});//ответ на http запрос.ResponseEntity - обертка
-        // респонса, в дженериках тип, который в теле респонса
+                new ParameterizedTypeReference<List<Employee>>() {});//отправляем запрос, получаем ответ в responseEntity
         List<Employee> allEmployees = responseEntity.getBody();
         return allEmployees;
     }
